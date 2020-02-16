@@ -5,7 +5,7 @@ const   gulp            = require('gulp'),
         autoprefixer    = require('gulp-autoprefixer'),
         cleanCSS        = require('gulp-clean-css'),
         uglify          = require('gulp-uglify'),
-        imagemin        = require('gulp-imagemin')
+        imagemin        = require('gulp-imagemin'),
         del             = require('del'),
         browserSync     = require('browser-sync').create(),
         rename          = require('gulp-rename');
@@ -86,7 +86,7 @@ gulp.task('watch', () => {
             baseDir: "./"
         }
     });
-    gulp.watch('./src/img/**', gulp.series('img-compress')),
+    gulp.watch('./src/img/**', gulp.series('img-compress'));
     gulp.watch('./src/styles/**/*.scss', gulp.series('styles'));
     gulp.watch('./src/scripts/**/*.js', gulp.series('scripts'));
     gulp.watch("./*.html").on('change', browserSync.reload);
